@@ -1,34 +1,51 @@
-# Goals
-There are a few problems with the current state of logging.  The first is that there is no real unified or agreed upon standard for how to do logging, across software platforms, so it is typically left up to the software designer to choose how to design and output logs.  Because of this non standardized approach, there are many many different formats that logs can become.  Obviously this is an issue if you are attempting to gather useful and meaningful data from a variety of different sources.  Because of this large number of log types and formats, numerous logging tools have been created, all trying to solve a certain type of logging problem, and so selecting one tool that offers everything can quickly become a chore.  The other big problem is that logs can produce an overwhelming amount of information.  Many of the traditional tools do nothing to correlate and represent the data that they collect.  Therefore, narrowing down specific issues can also become very difficult.
+h1. ATOM Structured Logging
+
+Goals/Problem statement
+
+* There are a few problems with the current state of logging.  You have different Applications/Containers/VMs feeding into each other. Debugging an issue requires logging into each individual box to look at the logs. With small number of apps/boxes it's not an issue, but it quickly becomes tedious as the number of apps/boxes increase!
+
+Proposed Solution:
+* It would be awesome to have all of your logs aggregated into one place so you can see the process flow and perform queries against the logs from all applications from one place.
+
+** Enter EFK stack ..
+
+What does EFK stands for:
+* Elasticsearch: Elasticsearch is a search server based on Lucene. It provides a distributed, multitenant-capable full-text search engine with a RESTful web interface and schema-free JSON documents.
+
+* Filebeat is a log data shipper for local files. Installed as an agent on your servers, Filebeat monitors the log directories or specific log files, tails the files, and forwards them either to Elasticsearch or Logstash for indexing.
+
+* Kibana: A nifty tool to visualize logs and timestamped data.
 
 
-# Proposed Logging Architecture
-  Log Producers
-  Collector 
-  Normalizer
-  Indexer
-  Query
-  Optional presentation layer
+h2. Proposed Logging Architecture via EFK
 
 <p align="center">
   <img src="Untitled%20Diagram.png" />
 </p>
 
-# Atom Log lifecycle
+** Log Producer
+** Collector 
+** Normalizer
+** Indexer
+** Query
+** Optional presentation layer
+
+
+h2. Atom Log lifecycle
   Generation
   Collection
   Indexing
   Retention
   
-# 3rdparty product logs lifecycle
+h2. 3rdparty product logs lifecycle
 Generation
 Collection
 Normalization
 Indexing
 Retention
 
-# Instance of our architecture with Filebeat/ELK
+h2. Instance of our architecture with Filebeat/ELK
 
-# Security
+h2. Security
 
-# Reliability with failure cases and mitigation.
+h2. Reliability with failure cases and mitigation.
