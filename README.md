@@ -1,20 +1,20 @@
-# ATOM Structured Logging
+# :hammer: ATOM Structured Logging
 
-## Goals/Problem statement
+### Goals/Problem statement:
 There are quite a few problems with the current state of logging.  You have different Applications/Containers/VMs feeding into each other. Debugging an issue requires logging into each individual box to look at the logs. With small number of apps/boxes it's not an issue, but it quickly becomes tedious as the number of apps/boxes increase!
 
-## Proposed Solution:
+### Proposed Solution:
 It would be awesome to have all of your logs aggregated into one place so you can see the process flow and perform queries against the logs from all applications from one place.
 
 ** Enter EFK stack ..
 
-## What does EFK stands for
+### What does EFK stands for
 * Elasticsearch: Elasticsearch is a search server based on Lucene. It provides a distributed, multitenant-capable full-text search engine with a RESTful web interface and schema-free JSON documents.
 * Filebeat is a log data shipper for local files. Installed as an agent on your servers, Filebeat monitors the log directories or specific log files, tails the files, and forwards them either to Elasticsearch or Logstash for indexing.
 * Kibana: A nifty tool to visualize logs and timestamped data.
 
 
-## Proposed Logging Architecture via EFK
+### Proposed Logging Architecture via EFK
 
 <p align="center">
   <img src="Untitled%20Diagram.png" />
@@ -22,12 +22,23 @@ It would be awesome to have all of your logs aggregated into one place so you ca
 
 The current architecture aims at the following via Filebeat and Elastic search.
 
+``` 
 
-Indexing:
+** Log Producer
+** Collector
+** Normalizer 
+** Indexer
+** Query
+** Optional presentation layer
 
-h3. Indexing
+```
 
+
+#### Indexing:
 Lets try and index some twitter like information. First, lets create a twitter user, and add some tweets (the @twitter@ index will be created automatically):
+
+For details
+https://github.com/elastic/elasticsearch/blob/master/README.textile
 
 <pre>
 curl -XPUT 'http://localhost:9200/twitter/user/kimchy' -d '{ "name" : "Shay Banon" }'
@@ -101,12 +112,6 @@ root@elastic-stack:/# curl -XPOST 'localhost:9200/filebeat-2017.10.18/_search?pr
 
 h1. Query/Searching
 
-** Log Producer
-** Collector
-** Normalizer 
-** Indexer
-** Query
-** Optional presentation layer
 
 
 
