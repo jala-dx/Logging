@@ -111,13 +111,11 @@ root@elastic-stack:/# curl -XPOST 'localhost:9200/filebeat-2017.10.18/_search?pr
 
 #### Atom Log lifecycle
 
-<p align="center">
-  <img src="Untitled%20Diagram.png" />
-</p>
 
 <p align="center">
-  <img src="log-life-cycle.png.png" />
+  <img src="log-life-cycle.png" />
 </p>
+
 
 ```
 ** Generation
