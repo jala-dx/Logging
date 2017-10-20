@@ -137,6 +137,13 @@ root@elastic-stack:/# curl -XPOST 'localhost:9200/filebeat-2017.10.18/_search?pr
 
 #### Instance of our architecture with Filebeat/ELK
 
+
+<p align="center">
+  <img src="efk-instances.png" />
+</p>
+
+
+
 #### Security
 
 #### Reliability with failure cases and mitigation.
