@@ -110,15 +110,15 @@ root@elastic-stack:/# curl -XPOST 'localhost:9200/filebeat-2017.10.18/_search?pr
 
 </pre>
 
-### Atom Log lifecycle
+#### Atom Log lifecycle
 ```
-  Generation
-  Collection
-  Indexing
-  Retention
+** Generation
+** Collection
+** Indexing
+** Retention
 ```
   
-### 3rdparty product logs lifecycle
+#### 3rdparty product logs lifecycle
 ```
 ** Generation
 ** Collection
@@ -127,8 +127,8 @@ root@elastic-stack:/# curl -XPOST 'localhost:9200/filebeat-2017.10.18/_search?pr
 ** Retention
 ```
 
-### Instance of our architecture with Filebeat/ELK
+#### Instance of our architecture with Filebeat/ELK
 
-### Security
+#### Security
 
-### Reliability with failure cases and mitigation.
+#### Reliability with failure cases and mitigation.
