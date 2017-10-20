@@ -4,7 +4,7 @@
 There are quite a few problems with the current state of logging.  You have different Applications/Containers/VMs feeding into each other. Debugging an issue requires logging into each individual box to look at the logs. With small number of apps/boxes it's not an issue, but it quickly becomes tedious as the number of apps/boxes increase!
 
 ### Proposed Solution:
-It would be awesome to have all of your logs aggregated into one place so you can see the process flow and perform queries against the logs from all applications from one place.
+It would be awesome to have all of your logs aggregated into one place so you can see the process flow and perform queries against the logs from all applications from one place. And Yes, we are going to leverage the best open source projects as much as possible.
 
 ** Enter EFK stack ..
 
@@ -23,12 +23,11 @@ It would be awesome to have all of your logs aggregated into one place so you ca
 The current architecture aims at the following via Filebeat and Elastic search.
 
 ``` 
-
+** Indexer
+** Query
 ** Log Producer
 ** Collector
 ** Normalizer 
-** Indexer
-** Query
 ** Optional presentation layer
 
 ```
