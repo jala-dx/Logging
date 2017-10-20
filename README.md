@@ -110,6 +110,15 @@ root@elastic-stack:/# curl -XPOST 'localhost:9200/filebeat-2017.10.18/_search?pr
 </pre>
 
 #### Atom Log lifecycle
+
+<p align="center">
+  <img src="Untitled%20Diagram.png" />
+</p>
+
+<p align="center">
+  <img src="log-life-cycle.png.png" />
+</p>
+
 ```
 ** Generation
 ** Collection
@@ -117,9 +126,7 @@ root@elastic-stack:/# curl -XPOST 'localhost:9200/filebeat-2017.10.18/_search?pr
 ** Retention
 ```
 
-<p align="center">
-  <img src="log-life-cycle.png.png" />
-</p>
+
   
 #### 3rdparty product logs lifecycle
 ```
